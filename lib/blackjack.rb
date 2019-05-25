@@ -32,7 +32,7 @@ end
 def hit?(num)
   prompt_user
   inp = get_user_input
-  until inp == 'h' || 's'
+  until inp == 'h' or 's'
     invalid_command
     prompt_user
     inp = get_user_input
