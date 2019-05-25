@@ -3,7 +3,8 @@ def welcome
 end
 
 def deal_card
-  rand (1..11)
+  num = rand (1..11)
+  return num
 end
 
 def display_card_total(card_total)
@@ -32,15 +33,17 @@ end
 def hit?(num)
   prompt_user
   inp = get_user_input
-  until inp == 'h' or 's'
+  until (inp == "h" or inp == "s")
     invalid_command
     prompt_user
     inp = get_user_input
   end
+
   if inp == "h"
     num = deal_card + num
+    return num
   elsif inp == 's'
-    num
+    return num
   end
 end
 
@@ -55,8 +58,7 @@ end
 def runner
   welcome
   num = initial_round
-  hit?(num)
+  num = hit?(num)
   display_card_total(num)
   end_game(num)
 end
-    
